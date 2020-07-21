@@ -1,0 +1,7 @@
+
+.players { margin-left: -16px; margin-right: -16px; }
+.player {
+    border-bottom: 1px solid #ddd;
+    .player-detail { padding: 0 8px; }
+}
+.player:last-child { border: none; }
