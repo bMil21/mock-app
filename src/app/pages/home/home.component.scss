@@ -1,7 +1,15 @@
 
 .players { margin-left: -16px; margin-right: -16px; }
-.player {
-    border-bottom: 1px solid #ddd;
-    .player-detail { padding: 0 8px; }
-}
+.player { border-bottom: 1px solid #ddd; }
 .player:last-child { border: none; }
+.player-detail { flex: 1; padding: 0 8px; box-sizing: border-box; }
+
+.number { flex: 0 0 40px; }
+.position { flex: 0 1 80px; }
+.name { flex: 1; }
+.team { flex: 1; }
+.action { flex: 0 1 auto; }
+
+.player-header {
+    .action { flex: 0 0 40px; }
+}

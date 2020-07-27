@@ -15,14 +15,19 @@ export class HomeComponent implements OnInit {
     this.getPlayers();
   }
 
+  /**
+   * Get Players
+   */
   getPlayers() {
     this.players = [
       {
+        'id': 1,
         'name': 'John Doe',
         'position': 'WR',
         'team': 'MIA'
       },
       {
+        'id': 2,
         'name': 'Billy Bob',
         'position': 'RB',
         'team': 'DAL'

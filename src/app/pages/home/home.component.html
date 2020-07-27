@@ -1,10 +1,25 @@
 <div class="wrap pad-16">
     <mat-card>
         <mat-list class="players">
-            <mat-list-item *ngFor="let player of players" class="player">
-                <span class="player-detail">{{player?.position}}</span>
-                <span class="player-detail">{{player?.name}}</span>
-                <span class="player-detail">{{player?.team}}</span>
+            <h5 class="player-header flex hrz-pad-16">
+                <span class="player-detail number">&nbsp;</span>
+                <span class="player-detail position">Position</span>
+                <span class="player-detail name">Name</span>
+                <span class="player-detail team">Team</span>
+                <span class="player-detail action">&nbsp;</span>
+                <span class="player-detail action">&nbsp;</span>
+            </h5>
+            <mat-list-item *ngFor="let player of players; index as i" class="player">
+                <span class="player-detail number">{{i + 1}}</span>
+                <span class="player-detail position">{{player?.position}}</span>
+                <span class="player-detail name">{{player?.name}}</span>
+                <span class="player-detail team">{{player?.team}}</span>
+                <button mat-icon-button class="player-detail action">
+                    <mat-icon>check</mat-icon>
+                </button>
+                <button mat-icon-button class="player-detail action">
+                    <mat-icon>edit</mat-icon>
+                </button>
             </mat-list-item>
         </mat-list>
     </mat-card>
