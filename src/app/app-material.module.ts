@@ -20,6 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
     imports: [
@@ -43,7 +44,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
         MatPaginatorModule,
         MatChipsModule,
         MatExpansionModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        MatRippleModule
     ],
     exports: [
         MatSnackBarModule,
@@ -66,7 +68,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
         MatPaginatorModule,
         MatChipsModule,
         MatExpansionModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        MatRippleModule
     ],
     declarations: [],
     providers: []
