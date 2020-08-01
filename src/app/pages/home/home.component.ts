@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/models/player';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
@@ -35,4 +36,11 @@ export class HomeComponent implements OnInit {
     ];
   }
 
+  /**
+   * 
+   * @param event 
+   */
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.players, event.previousIndex, event.currentIndex);
+  }
 }

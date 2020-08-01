@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { AppMaterialModule } from '../app-material.module';
 
-
-
 @NgModule({
   declarations: [
     HeaderComponent

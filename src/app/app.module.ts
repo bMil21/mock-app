@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
 import { CoreModule } from './core/core.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    CoreModule
+    CoreModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
