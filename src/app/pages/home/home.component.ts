@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/models/player';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { PlayerService } from 'src/app/core/services/player.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,9 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class HomeComponent implements OnInit {
   public players: Player[];
 
-  constructor() { }
+  constructor(
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit(): void {
     this.getPlayers();
@@ -20,20 +23,10 @@ export class HomeComponent implements OnInit {
    * Get Players
    */
   getPlayers() {
-    this.players = [
-      {
-        'id': 1,
-        'name': 'John Doe',
-        'position': 'WR',
-        'team': 'MIA'
-      },
-      {
-        'id': 2,
-        'name': 'Billy Bob',
-        'position': 'RB',
-        'team': 'DAL'
-      }
-    ];
+    this.playerService.getPlayers()
+      .subscribe(players => {
+        this.players = players;
+      });
   }
 
   /**
