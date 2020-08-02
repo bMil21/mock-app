@@ -2,8 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import { MockApiRoutes } from 'src/app/consts/mock-api-routes';
+import { Environment } from 'src/app/models/environment.model';
+
+export const environment: Environment = {
+  production: false,
+  apiRoutes: MockApiRoutes,
+  target: 'demo'
 };
 
 /*
