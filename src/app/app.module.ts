@@ -21,7 +21,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    CoreModule,
+    CoreModule.forRoot(),
     DragDropModule
   ],
   providers: [],

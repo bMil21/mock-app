@@ -72,6 +72,9 @@
           "configurations": {
             "production": {
               "browserTarget": "mock-app:build:production"
+            },
+            "demo": {
+              "browserTarget": "mock-app:build:demo"
             }
           }
         },
