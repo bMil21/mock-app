@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs: 
+    build: 
+        working_directory: ~/s/mock-app
+        docker:
+            - image: circleci/node:12-browsers
+        steps:
+            - checkout
+            - restore_cache:
+                key: dependency-cache-{{ checksum "package-lock.json" }}
+            - run:
+                name: install-dependencies
+                command: npm install
+            - save_cache:
+                key: dependency-cache-{{ checksum "package-lock.json" }}
+                paths:
+                    - ./node_modules
+            - run:
+                name: angular-build
+                command: npm run build --prod --aot
+            - run:
+                name: angular-test
+                command: npm run test -- --single-run --no-progress
