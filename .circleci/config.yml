@@ -21,4 +21,4 @@ jobs:
                 command: npm run build -- --prod --aot
             - run:
                 name: angular-test
-                command: npm run test
+                command: npm run test -- --watch=false
