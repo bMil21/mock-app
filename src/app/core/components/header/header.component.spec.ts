@@ -12,7 +12,9 @@ describe('HeaderComponent', () => {
       imports: [
         MatToolbarModule
       ],
-      declarations: [ HeaderComponent ]
+      declarations: [
+        HeaderComponent
+      ]
     })
     .compileComponents();
   }));
