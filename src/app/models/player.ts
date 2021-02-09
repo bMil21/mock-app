@@ -41,3 +41,21 @@ export interface PlayerMap {
 export interface PlayersResponse {
     players: PlayerMap[];
 }
+
+export const mockPlayers: PlayerMap[] = [
+    {
+        id: 1,
+        name: 'John Doe',
+        position: 'WR',
+        team: 'MIA'
+    },
+    {
+        id: 2,
+        name: 'Billy Bob',
+        position: 'RB',
+        team: 'DAL'
+    }
+];
+export const mockPlayersResponse: PlayersResponse = {
+    players: mockPlayers
+};

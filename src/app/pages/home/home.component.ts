@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/models/player';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { PlayerService } from 'src/app/core/services/player.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   /**
    * Get Players
    */
-  getPlayers() {
+  getPlayers(): void {
     this.playerService.getPlayers()
       .subscribe(players => {
         this.players = players;
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
    * 
    * @param event 
    */
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>): void {
     moveItemInArray(this.players, event.previousIndex, event.currentIndex);
   }
 }

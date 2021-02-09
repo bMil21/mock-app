@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { PlayerService } from './player.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Player, PlayersResponse } from 'src/app/models/player';
+import { mockPlayersResponse, Player, PlayersResponse } from 'src/app/models/player';
 import { of } from 'rxjs';
 
 describe('PlayerService', () => {
@@ -32,24 +32,7 @@ describe('PlayerService', () => {
   });
 
   it('should get players', () => {
-    const mockPlayers: PlayersResponse = {
-      players: [
-          {
-              id: 1,
-              name: 'John Doe',
-              position: 'WR',
-              team: 'MIA'
-          },
-          {
-              id: 2,
-              name: 'Billy Bob',
-              position: 'RB',
-              team: 'DAL'
-          }
-      ]
-    };
-
-    httpClientSpy.get.and.returnValue(of(mockPlayers));
+    httpClientSpy.get.and.returnValue(of(mockPlayersResponse));
 
     playerService.getPlayers()
       .subscribe(players => {
